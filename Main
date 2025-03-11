@@ -1,0 +1,25 @@
+package view;
+
+import controller.RedesController;
+import javax.swing.*;
+
+public class Main {
+    public static void main(String[] args) {
+        while (true) {
+            String[] options = {"Verificar IP", "Fazer Ping", "Sair"};
+            int choice = JOptionPane.showOptionDialog(null, "Escolha uma opção", "Menu",
+                    JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+            if (choice == 0) {
+                RedesController controller = new RedesController();
+                controller.ip();
+            } else if (choice == 1) {
+                RedesController controller = new RedesController();
+                controller.ping();
+            } else if (choice == 2) {
+                System.exit(0);
+            } else {
+                break;
+            }
+        }
+    }
+}
